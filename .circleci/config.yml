@@ -1,0 +1,18 @@
+machine:
+  timezone: Asia/Tokyo
+
+dependencies:
+  pre:
+    - bundle install
+    - ruby -v
+    - gem -v
+    - bundle -v
+
+test:
+  pre:
+    - echo "-----start test-----"
+  override:
+    - bundle exec ruby ikyu.rb
+  post:
+    - echo "-----end test-----"
+
